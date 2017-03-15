@@ -10,6 +10,9 @@ import { PostEditComponent } from './posts/post-edit/post-edit.component';
 import { HeaderComponent } from './header.component';
 import { PostAddComponent } from './posts/post-add/post-add.component';
 import { routing } from './app.routing';
+import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostItemComponent } from './posts/post-list/post-item.component';
+import { PostService } from './posts/post.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { routing } from './app.routing';
     PostDetailComponent,
     PostEditComponent,
     HeaderComponent,
-    PostAddComponent
+    PostAddComponent,
+    PostListComponent,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { routing } from './app.routing';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
