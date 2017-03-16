@@ -13,6 +13,7 @@ import { routing } from './app.routing';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostItemComponent } from './posts/post-list/post-item.component';
 import { PostService } from './posts/post.service';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PostService } from './posts/post.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    ReactiveFormsModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
