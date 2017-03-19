@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 import { Post } from './post';
+
 
 @Injectable()
 export class PostService {

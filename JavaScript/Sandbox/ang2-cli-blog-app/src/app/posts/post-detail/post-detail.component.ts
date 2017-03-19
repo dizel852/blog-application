@@ -38,6 +38,10 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     this.router.navigate(['/posts']);
   }
 
+  onBack(){
+    this.router.navigate(['/posts']);
+  }
+
   ngOnDestroy(){
      this.subscription.unsubscribe();
   }

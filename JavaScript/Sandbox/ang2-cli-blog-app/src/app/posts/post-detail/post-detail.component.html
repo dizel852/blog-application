@@ -3,16 +3,15 @@
     <h1>{{selectedPost?.title}}</h1>
   </div>
   <div class="col-xs-12">
+    <button class="btn btn-warning" (click)="onBack()">Back</button>
     <button class="btn btn-primary" (click)="onEdit()">Edit</button>
     <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+    <span class="pull-right">
+      <p class="list-group-item-text">{{selectedPost?.date}}</p>
+  </span>
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
-    <p>{{selectedPost?.date}}</p>
-  </div>
-</div>
 <div class="row">
   <div class="col-xs-12">
     <p>{{selectedPost?.body}}</p>
