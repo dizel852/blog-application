@@ -6,7 +6,8 @@ import { Post } from './post';
 export class PostService {
 
   private posts: Post[] = [
-    new Post('Why Will Angular 2 Rock?', 'Angular 2 is around the corner and there are mixed opinions about it. Some people can’t wait for it and other people are not any happy with it. Why is that? People are afraid to change, thinking that they wasted their time learning something that is now going to change in a radical way.', '15 november' )
+    new Post('Why Will Angular 2 Rock?', 'Angular 2 is around the corner and there are mixed opinions about it. Some people can’t wait for it and other people are not any happy with it. Why is that? People are afraid to change, thinking that they wasted their time learning something that is now going to change in a radical way.', '15 november' ),
+    new Post('Hello, this is my post', 'So cute, so nice','15 february')
   ];
   constructor() { }
 
