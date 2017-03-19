@@ -7,8 +7,8 @@ import { CommonModule  } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-   isIn = false; // store state
-   toggleState() { // click handler
+   isIn = false; 
+   toggleState() { 
         let bool = this.isIn;
         this.isIn = bool === false ? true : false; 
     }

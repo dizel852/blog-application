@@ -40,6 +40,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
       } else {
         this.isNew = true;
         this.post = null;
+        this.router.navigate(['../addpost'])
       }
       this.initForm();
     }
