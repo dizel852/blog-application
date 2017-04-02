@@ -6,12 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/posts', pathMatch: 'full' },
-  { path: 'posts', component: PostsComponent, children: [
-    // { path: '', component: RecipeStartComponent },
-    { path: 'new', component: PostEditComponent },
-    { path: ':id', component: PostDetailComponent },
-    { path: ':id/edit', component: PostEditComponent },
-  ] },
+  { path: 'posts', component: PostsComponent },
+  { path: 'posts/:id', component: PostDetailComponent },
+  { path: 'posts/:id/edit', component: PostEditComponent },
   { path: 'addpost', component: PostEditComponent }
 ];
 

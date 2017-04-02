@@ -3,6 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 import { PostService } from './../post.service';
+import { Post } from './../post.model';
+
 
 
 @Component({
@@ -26,6 +28,7 @@ export class PostEditComponent implements OnInit {
         this.id = +params['id'];
         this.editMode = params['id'] != null;
         this.initForm();
+
       }
       );
   }
@@ -36,6 +39,7 @@ export class PostEditComponent implements OnInit {
     } else {
       this.postService.addPost(this.postForm.value);
     }
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   onCancel() {
@@ -48,7 +52,7 @@ export class PostEditComponent implements OnInit {
     let postDate = '';
 
     if (this.editMode) {
-      const post = this.postService.getPost(this.id);
+     const post = this.postService.getPost(this.id);
       postTitle = post.title;
       postBody = post.body;
       postDate = post.date;

@@ -13,13 +13,12 @@ export class PostService {
     new Post(
       'Tasty Schnitzel',
       'A super-tasty Schnitzel - just awesome!',
-      '15/02/1992'),
+      'Thursday, March 23, 2017'),
     new Post('Big Fat Burger',
       'What else you need to say?',
       '16/02/1992')
   ];
 
-//   constructor(private slService: ShoppingListService) {}
 
 //   setRecipes(recipes: Recipe[]) {
 //     this.recipes = recipes;

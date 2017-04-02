@@ -16,21 +16,25 @@ export class PostDetailComponent implements OnInit {
 
 
   constructor(private postService: PostService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params
       .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];
-          this.post = this.postService.getPost(this.id);
-        }
+      (params: Params) => {
+        this.id = +params['id'];
+        this.post = this.postService.getPost(this.id);
+      }
       );
   }
 
+  onBack() {
+    this.router.navigate(['../'], { relativeTo: this.route });
+  }
+
   onEditPost() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['/posts', this.id, 'edit']);
   }
 
   onDeletePost() {
