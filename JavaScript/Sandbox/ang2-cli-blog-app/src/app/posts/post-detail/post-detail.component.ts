@@ -11,14 +11,14 @@ import { PostService } from '../post.service';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit, OnDestroy {
-  
+
   selectedPost: Post;
   private postIndex: number;
   private subscription: Subscription;
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
-              private postService: PostService) { }
+    private route: ActivatedRoute,
+    private postService: PostService) { }
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(
@@ -29,20 +29,20 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     );
   }
 
-  onEdit(){
+  onEdit() {
     this.router.navigate(['/posts', this.postIndex, 'edit']);
   }
 
-  onDelete(){
+  onDelete() {
     this.postService.deletePost(this.selectedPost);
     this.router.navigate(['/posts']);
   }
 
-  onBack(){
+  onBack() {
     this.router.navigate(['/posts']);
   }
 
-  ngOnDestroy(){
-     this.subscription.unsubscribe();
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

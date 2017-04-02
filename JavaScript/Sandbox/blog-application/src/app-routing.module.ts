@@ -1,15 +1,18 @@
+import { PostDetailComponent } from './app/posts/post-detail/post-detail.component';
+import { PostEditComponent } from './app/posts/post-edit/post-edit.component';
+import { PostsComponent } from './app/posts/posts.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-  { path: 'recipes', component: RecipesComponent, children: [
-    { path: '', component: RecipeStartComponent },
-    { path: 'new', component: RecipeEditComponent },
-    { path: ':id', component: RecipeDetailComponent },
-    { path: ':id/edit', component: RecipeEditComponent },
+  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: 'posts', component: PostsComponent, children: [
+    // { path: '', component: RecipeStartComponent },
+    { path: 'new', component: PostEditComponent },
+    { path: ':id', component: PostDetailComponent },
+    { path: ':id/edit', component: PostEditComponent },
   ] },
-  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'addpost', component: PostEditComponent }
 ];
 
 @NgModule({

@@ -10,7 +10,9 @@ import { SharedComponent } from './shared/shared.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PostEditComponent } from './posts/post-edit/post-edit.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
-app
+import { AppRoutingModule } from './../app-routing.module';
+import { PostService } from './posts/post.service';
+import { PostItemComponent } from './posts/post-list/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ app
     SharedComponent,
     PostDetailComponent,
     PostEditComponent,
-    PostListComponent
+    PostListComponent,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ app
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [PostService, DataStorageService],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

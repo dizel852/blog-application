@@ -1,3 +1,19 @@
-<p>
-  post-detail works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ post.title }}</h1>
+  </div>
+</div>
+<div class="col-xs-12">
+  <button class="btn btn-warning" (click)="onBack()">Back</button>
+  <button class="btn btn-primary" (click)="onEditPost()">Edit</button>
+  <button class="btn btn-danger" (click)="onDeletePost()">Delete</button>
+  <span class="pull-right">
+      <p class="list-group-item-text">{{ post.date }}</p>
+  </span>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    {{ post.body }}
+  </div>
+</div>
