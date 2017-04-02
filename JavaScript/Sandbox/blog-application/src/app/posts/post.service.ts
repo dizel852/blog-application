@@ -25,17 +25,18 @@ export class PostService {
 //     this.recipesChanged.next(this.recipes.slice());
 //   }
 
+  // getPosts() {
+  //   return this.posts.slice();
+  // }
+
   getPosts() {
     return this.posts.slice();
+    
   }
 
   getPost(index: number) {
     return this.posts[index];
   }
-
-//   addIngredientsToShoppingList(ingredients: Ingredient[]) {
-//     this.slService.addIngredients(ingredients);
-//   }
 
   addPost(post: Post) {
     this.posts.push(post);
