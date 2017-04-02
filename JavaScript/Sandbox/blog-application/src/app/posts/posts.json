@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Angular 4.0.0 Now Available",
+        "body": "We are very excited to share this release with the community, as it includes some major improvements and functionality that we have been working on for the past 3 months. We’ve worked hard to make sure that it’s easy for developers to update to this release.",
+        "date": "Thursday, March 23, 201"
+    },
+    { 
+        "title": "Angular Material 2: Alpha preview!",
+        "body": "On Tuesday, we released angular2-material alpha.0 - titanium-octopus, kicking off the public availability of the initial set of Angular Material 2 components.",
+        "date": "Wednesday, March 16, 2016"
+    }
+]

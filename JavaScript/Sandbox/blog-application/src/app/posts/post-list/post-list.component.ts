@@ -27,11 +27,8 @@ export class PostListComponent implements OnInit, OnDestroy {
           this.posts = posts;
         }
       );
-    this.posts = this.postService.getPosts();
-  }
-
-  onNewPost() {
-    this.router.navigate(['new'], {relativeTo: this.route});
+      this.postService.getPosts();
+      console.log("ngOnInit called!")
   }
 
   ngOnDestroy() {
