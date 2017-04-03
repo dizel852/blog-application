@@ -37,7 +37,7 @@ export class PostEditComponent implements OnInit {
     if (this.editMode) {
       this.postService.updatePost(this.id, this.postForm.value);
     } else {
-      this.postService.addPost(this.postForm.value);
+      this.postService.addPost(this.postForm.value)
     }
     this.router.navigate(['../'], { relativeTo: this.route });
   }

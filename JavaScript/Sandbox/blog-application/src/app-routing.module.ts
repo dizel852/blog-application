@@ -10,6 +10,14 @@ const appRoutes: Routes = [
   { path: 'posts/:id', component: PostDetailComponent },
   { path: 'posts/:id/edit', component: PostEditComponent },
   { path: 'addpost', component: PostEditComponent }
+
+  //  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  // { path: 'posts', component: PostsComponent, children: [
+  //   { path: ':id', component: PostDetailComponent }
+  // ] },
+  // // { path: 'posts/:id', component: PostDetailComponent },
+  // { path: 'posts/:id/edit', component: PostEditComponent },
+  // { path: 'addpost', component: PostEditComponent }
 ];
 
 @NgModule({

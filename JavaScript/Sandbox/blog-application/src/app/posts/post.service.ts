@@ -33,21 +33,20 @@ export class PostService {
 
   getPosts() {
     // return this.posts.slice();
-    this.http.get('src/app/posts/posts.json')
+    this.http.get('https://ng-post-blog.firebaseio.com/posts.json')
       .map(
       (response: Response) => {
         const posts: Post[] = response.json();
-        // for (let recipe of recipes) {
-        //   if (!recipe['ingredients']) {
-        //     recipe['ingredients'] = [];
-        //   }
-        // }
         return posts;
       }).subscribe(
       (posts: Post[]) => {
         this.setPosts(posts);
       }
       );
+  }
+
+  onStorePosts() {
+     return this.http.put('https://ng-post-blog.firebaseio.com/posts.json', this.posts);
   }
 
   getPost(index: number) {
@@ -57,6 +56,9 @@ export class PostService {
   addPost(post: Post) {
     this.posts.push(post);
     this.postsChanged.next(this.posts.slice());
+    this.onStorePosts().subscribe(
+        error => console.log(error)
+    );
   }
 
   updatePost(index: number, newPost: Post) {
@@ -67,5 +69,8 @@ export class PostService {
   deletePost(index: number) {
     this.posts.splice(index, 1);
     this.postsChanged.next(this.posts.slice());
+    this.onStorePosts().subscribe(
+        error => console.log(error)
+    );
   }
 }
