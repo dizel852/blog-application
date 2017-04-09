@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<!--<material-datepicker
+[(date)]="date" 
+[(placeholder)]="placeholder"
+[(rangeStart)]="rangeStart"
+>{{ date | date:'medium' }}</material-datepicker>-->
+<!--<script src="moment-with-locales.min.js"></script>-->
+ <input
+      [(ngModel)]="date"
+      ngui-datetime-picker
+     
+      [min-date]="getCurrenDate()"
+      date-only="true"
+      readonly
+      
+  />
+      
+<!--<ng2-datepicker [(ngModel)]="date"></ng2-datepicker>-->
+<br>
+<button (click)="showDate()">Show date</button>
+<p>{{ date | date:'longDate' }}</p>
