@@ -28,7 +28,6 @@ export class PostEditComponent implements OnInit {
         this.id = +params['id'];
         this.editMode = params['id'] != null;
         this.initForm();
-
       }
       );
   }
@@ -37,7 +36,7 @@ export class PostEditComponent implements OnInit {
     if (this.editMode) {
       this.postService.updatePost(this.id, this.postForm.value);
     } else {
-      this.postService.addPost(this.postForm.value)
+      this.postService.addPost(this.postForm.value);
     }
     this.router.navigate(['../'], { relativeTo: this.route });
   }

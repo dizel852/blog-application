@@ -27,12 +27,7 @@ export class PostService {
     this.postsChanged.next(this.posts.slice());
   }
 
-  // getPosts() {
-  //   return this.posts.slice();
-  // }
-
   getPosts() {
-    // return this.posts.slice();
     this.http.get('https://ng-post-blog.firebaseio.com/posts.json')
       .map(
       (response: Response) => {
@@ -46,7 +41,7 @@ export class PostService {
   }
 
   onStorePosts() {
-     return this.http.put('https://ng-post-blog.firebaseio.com/posts.json', this.posts);
+    return this.http.put('https://ng-post-blog.firebaseio.com/posts.json', this.posts);
   }
 
   getPost(index: number) {
@@ -57,20 +52,23 @@ export class PostService {
     this.posts.push(post);
     this.postsChanged.next(this.posts.slice());
     this.onStorePosts().subscribe(
-        error => console.log(error)
+      error => console.log(error)
     );
   }
 
   updatePost(index: number, newPost: Post) {
     this.posts[index] = newPost;
     this.postsChanged.next(this.posts.slice());
+    this.onStorePosts().subscribe(
+      error => console.log(error)
+    );
   }
 
   deletePost(index: number) {
     this.posts.splice(index, 1);
     this.postsChanged.next(this.posts.slice());
     this.onStorePosts().subscribe(
-        error => console.log(error)
+      error => console.log(error)
     );
   }
 }
