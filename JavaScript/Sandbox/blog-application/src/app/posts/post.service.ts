@@ -11,13 +11,13 @@ export class PostService {
   postsChanged = new Subject<Post[]>();
 
   private posts: Post[] = [
-    new Post(
-      'Tasty Schnitzel',
-      'A super-tasty Schnitzel - just awesome!',
-      'Thursday, March 23, 2017'),
-    new Post('Big Fat Burger',
-      'What else you need to say?',
-      '16/02/1992')
+    // new Post(
+    //   'Tasty Schnitzel',
+    //   'A super-tasty Schnitzel - just awesome!',
+    //   '5/05/2015'),
+    // new Post('Big Fat Burger',
+    //   'What else you need to say?',
+    //   '16/02/1992')
   ];
 
   constructor(private http: Http) { }

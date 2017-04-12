@@ -8,7 +8,7 @@
   <button class="btn btn-primary" (click)="onEditPost()">Edit</button>
   <button class="btn btn-danger" (click)="onDeletePost()">Delete</button>
   <span class="pull-right">
-      <p class="list-group-item-text">{{ post.date }}</p>
+      <p class="list-group-item-text">{{ post.date | date }}</p>
   </span>
 </div>
 <hr>

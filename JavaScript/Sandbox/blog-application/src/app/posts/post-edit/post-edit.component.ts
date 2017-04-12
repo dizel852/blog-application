@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { PostService } from './../post.service';
 import { Post } from './../post.model';
+import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 
 
@@ -45,10 +46,16 @@ export class PostEditComponent implements OnInit {
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
+  getCurrenDate() {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - 1);
+    return currentDate;
+  }
+
   private initForm() {
     let postTitle = '';
     let postBody = '';
-    let postDate = '';
+    let postDate;
 
     if (this.editMode) {
      const post = this.postService.getPost(this.id);
@@ -58,9 +65,10 @@ export class PostEditComponent implements OnInit {
     }
 
     this.postForm = new FormGroup({
-      'title': new FormControl(postTitle),
-      'body': new FormControl(postBody),
+      'title': new FormControl(postTitle, [Validators.required, Validators.pattern(/^[.a-zA-Z0-9_-]*$/), Validators.maxLength(100)]),
+      'body': new FormControl(postBody, [Validators.required, Validators.minLength(200), Validators.maxLength(5000)]),
       'date': new FormControl(postDate)
     });
+    this.postForm.get('date').setValue(postDate);
   }
 }

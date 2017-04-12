@@ -13,6 +13,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { AppRoutingModule } from './../app-routing.module';
 import { PostService } from './posts/post.service';
 import { PostItemComponent } from './posts/post-list/post-item/post-item.component';
+import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PostItemComponent } from './posts/post-list/post-item/post-item.compone
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NguiDatetimePickerModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
