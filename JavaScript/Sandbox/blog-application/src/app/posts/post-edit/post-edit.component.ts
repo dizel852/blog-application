@@ -69,6 +69,5 @@ export class PostEditComponent implements OnInit {
       'body': new FormControl(postBody, [Validators.required, Validators.minLength(200), Validators.maxLength(5000)]),
       'date': new FormControl(postDate)
     });
-    this.postForm.get('date').setValue(postDate);
   }
 }
