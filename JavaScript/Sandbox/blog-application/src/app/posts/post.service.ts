@@ -10,15 +10,7 @@ import { Post } from './post.model';
 export class PostService {
   postsChanged = new Subject<Post[]>();
 
-  private posts: Post[] = [
-    // new Post(
-    //   'Tasty Schnitzel',
-    //   'A super-tasty Schnitzel - just awesome!',
-    //   '5/05/2015'),
-    // new Post('Big Fat Burger',
-    //   'What else you need to say?',
-    //   '16/02/1992')
-  ];
+  private posts: Post[] = [];
 
   constructor(private http: Http) { }
 

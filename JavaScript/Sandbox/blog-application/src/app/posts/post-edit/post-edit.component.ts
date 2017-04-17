@@ -65,9 +65,9 @@ export class PostEditComponent implements OnInit {
     }
 
     this.postForm = new FormGroup({
-      'title': new FormControl(postTitle, [Validators.required, Validators.pattern(/^[.a-zA-Z0-9_-]*$/), Validators.maxLength(100)]),
+      'title': new FormControl(postTitle, [Validators.required, Validators.pattern(/^[^\s].*/), Validators.maxLength(100)]),
       'body': new FormControl(postBody, [Validators.required, Validators.minLength(200), Validators.maxLength(5000)]),
-      'date': new FormControl(postDate)
+      'date': new FormControl(postDate, Validators.required)
     });
   }
 }
