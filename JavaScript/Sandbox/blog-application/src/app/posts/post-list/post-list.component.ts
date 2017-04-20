@@ -19,7 +19,13 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   constructor(private postService: PostService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+      // TO-DO: Remove timeout.Refactor post.service. Observables work incorrectly
+      setTimeout(() => {
+      this.postService.getPosts();
+    }, 500);
+      console.log("Post-list constructor called!(refresh)")
+     }
 
   ngOnInit() {
     this.subscription = this.postService.postsChanged
@@ -28,21 +34,9 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.posts = posts;
       }
       );
-    this.postService.getPosts();
-    console.log("ngOnInit called!")
+    console.log("Post-list ngOnInit called!")
   }
 
-  refresh() {
-    this.postService.getPosts();
-  }
-  // storePosts() {
-  //   this.postService.onStorePosts()
-  //     .subscribe(
-  //     (response: Response) => {
-  //       console.log(response);
-  //     }
-  //   )
-  // }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
