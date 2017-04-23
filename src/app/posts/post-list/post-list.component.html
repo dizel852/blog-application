@@ -1,9 +1,23 @@
+<div class="container-fluid">
+  <div class="row content">
 
-<div class="row">
-  <div class="col-xs-12">
-    <app-post-item
-      *ngFor="let postEl of posts; let i = index"
-      [post]="postEl"
-      [index]="i"></app-post-item>
+    <div class="col-sm-2 sidenav">
+      <h5>Latest posts:</h5>
+      <ul class="nav nav-pills nav-stacked">
+        <li 
+        *ngFor="let postEl of posts | slice:0:5 "
+        >*{{postEl.title}}</li>
+      </ul><br>
+      <h5>Count of posts: {{posts?.length}}</h5>
+    </div>
+
+    <div class="col-sm-5">
+      <app-post-item
+       *ngFor="let postEl of posts; let i = index" 
+       [post]="postEl" 
+       [index]="i"
+       ></app-post-item>
+    </div>
+
   </div>
 </div>
